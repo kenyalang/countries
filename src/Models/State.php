@@ -29,9 +29,9 @@ use Kenyalang\Countries\Traits\HasCountry;
  *
  * @property string $name
  * @property string $code
- * @property string latitude',
- * @property string longitude',
- * @property string country_name',
+ * @property string $latitude
+ * @property string $longitude
+ * @property string $country_name
  *
  * @property-read Carbon $created_at
  * @property-read Carbon $updated_at

@@ -15,7 +15,9 @@ return new class () extends Migration {
 
         collect($countries)->each(function ($country) {
             $timezone = Arr::first(Arr::pull($country, 'timezones'));
-            $model = Country::create([
+
+            /** @var Country $countryModel */
+            $countryModel = Country::create([
                 'name' => $country['name'],
                 'code' => $country['iso3'],
                 'phone_code' => $country['phone_code'],
@@ -32,7 +34,7 @@ return new class () extends Migration {
                     'code' => $state['state_code'],
                     'longitude' => $state['longitude'],
                     'latitude' => $state['latitude'],
-                    'country_name' => $model->name,
+                    'country_name' => $countryModel->name,
                 ]);
             }
         });
