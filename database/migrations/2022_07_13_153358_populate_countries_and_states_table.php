@@ -3,6 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\DB;
+use Kenyalang\Countries\Enums\CountryStatus;
 use Kenyalang\Countries\Models\Country;
 use Kenyalang\Countries\Models\State;
 
@@ -22,7 +23,7 @@ return new class () extends Migration {
                 'currency_name' => $country['currency_name'],
                 'currency_symbol' => $country['currency_symbol'],
                 'timezone' => $timezone['zoneName'],
-                'status' => $country['name'] === 'Malaysia' ? 'active' : 'inactive',
+                'status' => CountryStatus::INACTIVE->value,
             ]);
 
             foreach ($country['states'] as $state) {
