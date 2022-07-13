@@ -2,9 +2,13 @@
 
 namespace Kenyalang\Countries\Traits;
 
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Kenyalang\Countries\Models\Country;
 
+/*
+ * @method Builder|static withLocale()
+ */
 trait HasCountry
 {
     public function country(): BelongsTo
