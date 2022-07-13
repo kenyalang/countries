@@ -1,9 +1,9 @@
 <?php
 
+use Illuminate\Foundation\Testing\RefreshDatabase;
+use Kenyalang\Countries\Enums\CountryStatus;
 use Kenyalang\Countries\Models\Country;
 use Kenyalang\Countries\Models\State;
-use Kenyalang\Countries\Enums\CountryStatus;
-use Illuminate\Foundation\Testing\RefreshDatabase;
 
 uses(RefreshDatabase::class);
 
