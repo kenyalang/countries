@@ -10,6 +10,7 @@ class CountryFactory extends Factory
 {
     protected $model = Country::class;
 
+    /** @phpstan-ignore-next-line */
     #[ArrayShape(["name" => "string", "code" => "string", "phone_code" => "string", "currency_code" => "string", "currency_name" => "string", "currency_symbol" => "string", "status" => "string", "timezone" => "string"])]
     public function definition(): array
     {

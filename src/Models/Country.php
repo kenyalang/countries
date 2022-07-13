@@ -31,12 +31,12 @@ use Kenyalang\Countries\Enums\CountryStatus;
  *
  * @property string $name
  * @property string $code
- * @property string phone_code',
- * @property string currency_code',
- * @property string currency_name',
- * @property string currency_symbol',
- * @property string status',
- * @property string timezone',
+ * @property string $phone_code
+ * @property string $currency_code
+ * @property string $currency_name
+ * @property string $currency_symbol
+ * @property string $status
+ * @property string $timezone
  *
  * @property-read Carbon $created_at
  * @property-read Carbon $updated_at

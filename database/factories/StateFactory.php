@@ -10,6 +10,7 @@ class StateFactory extends Factory
 {
     protected $model = State::class;
 
+    /** @phpstan-ignore-next-line */
     #[ArrayShape(["name" => "string", "code" => "string", "latitude" => "null", "longitude" => "null", "country_name" => "string"])]
     public function definition(): array
     {
