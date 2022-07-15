@@ -68,6 +68,11 @@ class Country extends Model
         $this->update(['status' => CountryStatus::ACTIVE->value]);
     }
 
+    public function deactivate(): void
+    {
+        $this->update(['status' => CountryStatus::INACTIVE->value]);
+    }
+
     public function scopeActive($query): void
     {
         $query->where('status', 'active');
