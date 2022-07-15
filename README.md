@@ -13,6 +13,12 @@ You can install the package via composer:
 composer require kenyalang/countries
 ```
 
+To publish the `config` file, you can use the following command:
+
+```php
+php artisan vendor:publish --provider="\Kenyalang\Countries\CountriesServiceProvider" --tag=config
+```
+
 ## Usage
 Run the migrations to create and populate the `countries` and `states` table.
 
@@ -20,10 +26,28 @@ Run the migrations to create and populate the `countries` and `states` table.
 php artisan migrate
 ```
 
-By default, the `countries` will be inactive. You will need to manually activate them.
+By default, the `countries` will be inactive. To enable them update your `.env`.
 
 ```php
-\Kenyalang\Countries\Models\Country::whereName('United States')->first()->activate();
+ENABLE_ALL_COUNTRIES=true
+```
+
+To manually enable a country, you may query the desired country and use the `activate` function.
+
+```php
+\Kenyalang\Countries\Models\Country::where('name', 'United States')->activate();
+```
+
+To disable a country, you may query the desired country and use the `deactivate` function.
+
+```php
+\Kenyalang\Countries\Models\Country::where('name', 'United States')->deactivate();
+```
+
+To query only active countries, use the `active` scope.
+
+```php
+\Kenyalang\Countries\Models\Country::active()->get();
 ```
 
 Add the following trait to your model to use the `countries` and `states` table:
