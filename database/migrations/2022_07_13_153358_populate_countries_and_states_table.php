@@ -25,7 +25,9 @@ return new class () extends Migration {
                 'currency_name' => $country['currency_name'],
                 'currency_symbol' => $country['currency_symbol'],
                 'timezone' => $timezone['zoneName'],
-                'status' => CountryStatus::INACTIVE->value,
+                'status' => config('countries.enable_all_countries')
+                    ? CountryStatus::ACTIVE->value
+                    : CountryStatus::INACTIVE->value,
             ]);
 
             foreach ($country['states'] as $state) {
